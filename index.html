@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FirstSky Tools - Accueil</title>
+    <meta name="description" content="Landing page moderne pour FirstSky Tools. Calculs Minecraft, design bento grid, animations, DaisyUI." />
+    <link rel="icon" type="image/png" href="https://mc-heads.net/avatar/Feuforeves/64" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <style>
+      .typewriter {
+        overflow: hidden;
+        border-right: .15em solid #a855f7;
+        white-space: nowrap;
+        animation: typing 2.5s steps(40, end), blink-caret .75s step-end infinite;
+      }
+      @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+      }
+      @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: #a855f7; }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-base-200">
+    <header class="navbar bg-base-100 shadow sticky top-0 z-30">
+      <div class="container mx-auto flex items-center px-2 md:px-0">
+        <div class="flex items-center gap-3 flex-1 min-w-0">
+          <img src="https://mc-heads.net/avatar/Feuforeves/48" alt="Logo" class="w-10 h-10 rounded-lg shadow" />
+          <span class="font-minecraft text-2xl font-bold tracking-tight">FirstSky Tools</span>
+        </div>
+        <nav class="flex gap-2 justify-center flex-1">
+          <a href="/stackers" class="btn btn-ghost btn-sm">Stackers</a>
+          <a href="/credits" class="btn btn-ghost btn-sm">Crédits</a>
+          <a href="/xp" class="btn btn-ghost btn-sm">XP</a>
+          <a href="/economy" class="btn btn-ghost btn-sm">Économie</a>
+        </nav>
+        <div class="flex items-center gap-2 flex-1 justify-end">
+          <label class="swap swap-rotate">
+            <input type="checkbox" id="themeToggle" />
+            <svg class="swap-on fill-current w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64 17.657A9 9 0 1 0 12 3v9z"/></svg>
+            <svg class="swap-off fill-current w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64 13.657A9 9 0 1 1 12 3v9z"/></svg>
+          </label>
+        </div>
+      </div>
+    </header>
+    <main class="flex flex-col items-center justify-center min-h-[80vh] py-12 px-2">
+      <div class="text-center mb-10">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 animate-fade-in">Bienvenue sur <span class="text-primary">FirstSky Tools</span></h1>
+        <h2 class="text-xl md:text-2xl font-semibold text-base-content/70 typewriter mx-auto max-w-xl animate-fade-in" id="typewriter">Des outils modernes pour la communauté OneBlock.</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-3xl animate-fade-in" style="animation-delay:0.5s;">
+        <a href="/stackers" class="card bg-base-100 shadow-xl hover:scale-105 transition-transform duration-300 cursor-pointer group">
+          <div class="card-body flex flex-col items-center justify-center">
+            <span class="text-3xl">🧮</span>
+            <h3 class="card-title text-xl font-bold mb-2 group-hover:text-primary transition-colors">Stackers</h3>
+            <p class="text-base-content/70 text-center">Calcule le prix de tes stackers et génère les commandes associées.</p>
+          </div>
+        </a>
+        <a href="/credits" class="card bg-base-100 shadow-xl hover:scale-105 transition-transform duration-300 cursor-pointer group">
+          <div class="card-body flex flex-col items-center justify-center">
+            <span class="text-3xl">✨</span>
+            <h3 class="card-title text-xl font-bold mb-2 group-hover:text-primary transition-colors">Crédits</h3>
+            <p class="text-base-content/70 text-center">Calculateur de crédits pour l'achat et la revente</p>
+          </div>
+        </a>
+        <a href="/xp" class="card bg-base-100 shadow-xl hover:scale-105 transition-transform duration-300 cursor-pointer group">
+          <div class="card-body flex flex-col items-center justify-center">
+            <span class="text-3xl">📦</span>
+            <h3 class="card-title text-xl font-bold mb-2 group-hover:text-primary transition-colors">XP</h3>
+            <p class="text-base-content/70 text-center">Outil pour calculer le prix de l'expérience.</p>
+          </div>
+        </a>
+        <a href="/economy" class="card bg-base-100 shadow-xl hover:scale-105 transition-transform duration-300 cursor-pointer group">
+          <div class="card-body flex flex-col items-center justify-center">
+            <span class="text-3xl">💰</span>
+            <h3 class="card-title text-xl font-bold mb-2 group-hover:text-primary transition-colors">Économie</h3>
+            <p class="text-base-content/70 text-center">Analyse et outils pour l'économie du serveur (à venir).</p>
+          </div>
+        </a>
+      </div>
+    </main>
+    <footer class="mt-auto py-6 text-center text-base-content/60 text-sm">
+      <p>Made with <span class="text-accent">♥</span> by <a href="https://github.com/ivy-js" class="text-primary hover:underline">Ivy</a> | <span class="font-bold text-accent">/pw Castle</span></p>
+    </footer>
+    <script src="/scripts/script-index.js" defer></script>
+  </body>
+</html>

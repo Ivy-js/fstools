@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crédits | FirstSky Tools</title>
+    <link rel="icon" type="image/png" href="https://mc-heads.net/avatar/Feuforeves/64" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="min-h-screen bg-base-200">
+    <header class="navbar bg-base-100 shadow sticky top-0 z-30">
+      <div class="container mx-auto flex items-center px-2 md:px-0">
+        <a href="/" class="flex items-center gap-3 flex-1 min-w-0">
+          <img src="https://mc-heads.net/avatar/Feuforeves/48" alt="Logo" class="w-10 h-10 rounded-lg shadow cursor-pointer group-hover:opacity-75 transition" />
+          <span class="font-minecraft text-2xl font-bold tracking-tight">FirstSky Tools</span>
+        </a>
+        <nav class="flex gap-2 justify-center flex-1">
+          <a href="/stackers" class="btn btn-ghost btn-sm">Stackers</a>
+          <a href="/credits" class="btn btn-ghost btn-sm btn-active">Crédits</a>
+          <a href="/xp" class="btn btn-ghost btn-sm">XP</a>
+          <a href="/economy" class="btn btn-ghost btn-sm">Économie</a>
+        </nav>
+        <div class="flex items-center gap-2 flex-1 justify-end">
+          <label class="swap swap-rotate">
+            <input type="checkbox" id="themeToggle" />
+            <svg class="swap-on fill-current w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64 17.657A9 9 0 1 0 12 3v9z"/></svg>
+            <svg class="swap-off fill-current w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64 13.657A9 9 0 1 1 12 3v9z"/></svg>
+          </label>
+        </div>
+      </div>
+    </header>
+    <main class="flex flex-col items-center justify-center min-h-[80vh] py-8 px-2">
+      <div class="w-full max-w-lg card bg-base-100 shadow-xl p-6 animate-fade-in">
+        <div id="pseudoSection" class="flex flex-col items-center gap-4 hidden">
+          <h2 class="text-xl font-bold">Entrez votre pseudo Minecraft</h2>
+          <input id="pseudoInput" type="text" maxlength="16" placeholder="Votre pseudo..." class="input input-bordered w-full" />
+          <button id="savePseudo" class="btn btn-primary w-full">Enregistrer</button>
+        </div>
+        <div id="mainTool" class="flex flex-col items-center gap-6">
+          <div class="flex flex-col items-center gap-2 mb-4">
+            <div class="avatar">
+              <div class="w-20 rounded-xl ring ring-primary ring-offset-base-100 ring-offset-2">
+                <img id="playerAvatar" src="" alt="Avatar Minecraft" />
+              </div>
+            </div>
+            <span id="playerName" class="font-minecraft text-lg font-bold"></span>
+            <button id="changePseudo" class="btn btn-xs btn-outline btn-accent mt-1">Changer de pseudo</button>
+          </div>
+          <form id="creditsForm" class="flex flex-col gap-4 w-full">
+            <label class="form-control">
+              <span class="label-text">Prix du crédit (en millions)</span>
+              <input type="number" min="1" step="0.01" id="prixCredit" class="input input-bordered input-primary" placeholder="Ex: 165" required />
+            </label>
+            <label class="form-control">
+              <span class="label-text">Nombre de crédits</span>
+              <input type="number" min="1" step="1" id="nbCredits" class="input input-bordered input-primary" placeholder="Ex: 3" required />
+            </label>
+            <button type="submit" class="btn btn-primary mt-2">Calculer</button>
+          </form>
+          <div id="resultatCredits" class="mt-6 text-center text-lg font-semibold text-success hidden"></div>
+        </div>
+        <p class="text-center text-base-content/70 mt-4">
+          Prix du crédit généralement constaté : <span class="font-semibold text-primary">160M à 170M/u</span><br>
+          <span class="text-xs text-warning">(Les crédits ne sont disponibles que si vous êtes <span class="font-bold">grade perso</span> sur le serveur)</span>
+        </p>
+      </div>
+    </main>
+    <footer class="mt-auto py-6 text-center text-base-content/60 text-sm">
+      <p>Made with <span class="text-accent">♥</span> by <a href="https://github.com/ivy-js" class="text-primary hover:underline">Ivy</a> | <span class="font-bold text-accent">/pw Castle</span></p>
+    </footer>
+    <script src="/scripts/script-credits.js" defer></script>
+  </body>
+</html>

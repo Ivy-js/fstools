@@ -1,0 +1,26 @@
+{
+  "name": "fstools",
+  "version": "1.0.0",
+  "description": "**FirstSky** est une interface web stylisée, conçue pour les serveurs Minecraft OneBlock. Elle regroupe plusieurs calculateurs pratiques pour les joueurs, avec un design moderne basé sur TailwindCSS et DaisyUI.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ivy-js/fstools.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ivy-js/fstools/issues"
+  },
+  "homepage": "https://github.com/Ivy-js/fstools#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "path": "^0.12.7"
+  }
+}
