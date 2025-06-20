@@ -47,6 +47,10 @@ const payCommand = document.getElementById('payCommand');
 const sellCommand = document.getElementById('sellCommand');
 const toast = document.getElementById('toast');
 const toastMessage = document.getElementById('toastMessage');
+const userAvatarMenu = document.getElementById('userAvatarMenu');
+const userAvatarImg = document.getElementById('userAvatarImg');
+const userMenu = document.getElementById('userMenu');
+const logoutBtn = document.getElementById('logoutBtn');
 
 const navButtons = document.querySelectorAll('[data-tool]');
 const tools = {
@@ -79,6 +83,17 @@ function init() {
     blockQuantity.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') handleCalculate();
     });
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', handleLogout);
+    }
+    if (userAvatarImg) {
+        userAvatarImg.addEventListener('click', toggleUserMenu);
+    }
+    document.addEventListener('click', (e) => {
+        if (userMenu && !userMenu.contains(e.target) && !userAvatarImg.contains(e.target)) {
+            userMenu.classList.add('hidden');
+        }
+    });
 }
 
 function setPlayer(pseudo) {
@@ -89,10 +104,20 @@ function setPlayer(pseudo) {
     playerAvatar.onerror = () => {
         playerAvatar.src = 'https://mc-heads.net/avatar/steve/64';
     };
-    pseudoForm.classList.add('hidden');
+    // Retire complètement le container d'identification
+    if (pseudoForm && pseudoForm.parentElement && pseudoForm.parentElement.parentElement) {
+        pseudoForm.parentElement.parentElement.remove();
+    }
     playerInfo.classList.remove('hidden');
     showCurrentTool();
     CookieManager.set('firstsky_pseudo', pseudo);
+    if (userAvatarMenu && userAvatarImg) {
+        userAvatarMenu.classList.remove('hidden');
+        userAvatarImg.src = avatarUrl;
+        userAvatarImg.onerror = () => {
+            userAvatarImg.src = 'https://mc-heads.net/avatar/steve/64';
+        };
+    }
 }
 
 function switchTool(toolName) {
@@ -139,9 +164,9 @@ function handleChangePseudo() {
     currentPlayer = null;
     playerInfo.classList.add('hidden');
     Object.values(tools).forEach(tool => tool.classList.add('hidden'));
-    pseudoForm.classList.remove('hidden');
-    resultsSection.classList.add('hidden');
     CookieManager.remove('firstsky_pseudo');
+    if (userAvatarMenu) userAvatarMenu.classList.add('hidden');
+    location.reload();
 }
 
 function handleCalculate() {
@@ -201,6 +226,18 @@ function showToast(message, type = 'success') {
     setTimeout(() => {
         toast.classList.add('hidden');
     }, 3000);
+}
+
+function handleLogout() {
+    handleChangePseudo();
+    if (userMenu) userMenu.classList.add('hidden');
+}
+
+function toggleUserMenu(e) {
+    e.stopPropagation();
+    if (userMenu) {
+        userMenu.classList.toggle('hidden');
+    }
 }
 
 document.addEventListener('DOMContentLoaded', init);
