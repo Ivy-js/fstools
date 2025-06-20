@@ -159,7 +159,7 @@ function handleCalculate() {
     const total = unitPrice * quantity;
     const formattedPrice = formatPrice(total);
     totalPrice.textContent = formattedPrice;
-    payCommand.value = `/pay ${currentPlayer} ${total}`;
+    payCommand.value = `/pay <vendeur> ${total}`;
     sellCommand.value = `/zah sell ${total}`;
     resultsSection.classList.remove('hidden');
     showToast('Calcul effectué!', 'success');
