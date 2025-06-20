@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return found ? found.price : 0;
   }
   function formatPrice(val) {
+    if (val >= 1e12) return (val/1e12).toFixed(1).replace('.0', '')+'T';
     if (val >= 1e9) return (val/1e9).toFixed(1).replace('.0','')+'B';
     if (val >= 1e6) return (val/1e6).toFixed(1).replace('.0','')+'M';
     if (val >= 1e3) return (val/1e3).toFixed(1).replace('.0','')+'k';
