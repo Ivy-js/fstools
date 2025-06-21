@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const total = getPrice(type) * qty;
     totalPrice.textContent = formatPrice(total);
-    payCommand.value = `/pay ${pseudo} ${total}`;
+    payCommand.value = `/pay <joueur> ${total}`;
     sellCommand.value = `/zah sell ${total}`;
     results.classList.remove('hidden');
   });
