@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zah Sell | FirstSky Tools</title>
+    <title>Discords | FirstSky Tools</title>
     <link rel="icon" type="image/png" href="https://mc-heads.net/avatar/Feuforeves/64" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body class="min-h-screen bg-base-200">
     <header class="navbar bg-base-100 shadow sticky top-0 z-30">
@@ -19,43 +20,34 @@
           <a href="/stackers" class="btn btn-ghost btn-sm">Stackers</a>
           <a href="/credits" class="btn btn-ghost btn-sm">Crédits</a>
           <a href="/xp" class="btn btn-ghost btn-sm">XP</a>
-          <a href="/zahsell" class="btn btn-ghost btn-sm btn-active">Zah Sell</a>
           <a href="/economy" class="btn btn-ghost btn-sm">Économie</a>
         </nav>
         <div class="flex items-center gap-2 flex-1 justify-end">
+          <a href="/discords" class="btn btn-info btn-sm flex items-center gap-1 mr-2"><i class="fab fa-discord"></i> Discord</a>
           <label class="swap swap-rotate">
             <input type="checkbox" id="themeToggle" />
-            <svg class="swap-on fill-current w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64 17.657A9 9 0 1 0 12 3v9z"/></svg>
-            <svg class="swap-off fill-current w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64 13.657A9 9 0 1 1 12 3v9z"/></svg>
+            <i class="fa-solid fa-moon swap-on fill-current w-7 h-7 text-xl"></i>
+            <i class="fa-solid fa-sun swap-off fill-current w-7 h-7 text-xl"></i>
           </label>
         </div>
       </div>
     </header>
     <main class="flex flex-col items-center justify-center min-h-[80vh] py-8 px-2">
-      <div class="w-full max-w-lg card bg-base-100 shadow-xl p-6 animate-fade-in">
-        <div id="pseudoSection" class="flex flex-col items-center gap-4 hidden">
-          <h2 class="text-xl font-bold">Entrez votre pseudo Minecraft</h2>
-          <input id="pseudoInput" type="text" maxlength="16" placeholder="Votre pseudo..." class="input input-bordered w-full" />
-          <button id="savePseudo" class="btn btn-primary w-full">Enregistrer</button>
-        </div>
-        <div id="mainTool" class="flex flex-col items-center gap-6">
-          <div class="flex flex-col items-center gap-2 mb-4">
-            <div class="avatar">
-              <div class="w-20 rounded-xl ring ring-primary ring-offset-base-100 ring-offset-2">
-                <img id="playerAvatar" src="" alt="Avatar Minecraft" />
-              </div>
-            </div>
-            <span id="playerName" class="font-minecraft text-lg font-bold"></span>
-            <button id="changePseudo" class="btn btn-xs btn-outline btn-accent mt-1">Changer de pseudo</button>
-          </div>
-          <h2 class="text-2xl font-bold mb-4">Calculateur Zah Sell</h2>
-          <p class="text-center text-base-content/70">Outil en développement...</p>
-        </div>
+      <div class="w-full max-w-lg card bg-base-100 shadow-xl p-8 animate-fade-in flex flex-col items-center gap-8">
+        <h2 class="text-2xl font-bold mb-2 text-center">Rejoins les Discords</h2>
+        <button onclick="window.open('https://discord.gg/firstsky', '_blank')" class="btn btn-primary w-full text-lg flex items-center gap-2">
+          <i class="fab fa-discord text-2xl"></i>
+          Discord officiel du serveur <span class="badge badge-success ml-2">Officiel</span>
+        </button>
+        <button onclick="window.open('https://discord.gg/fstools', '_blank')" class="btn btn-success w-full text-lg flex items-center gap-2">
+          <i class="fab fa-discord text-2xl"></i>
+          Communauté FSTools <span class="badge badge-warning ml-2">Non Officiel</span>
+        </button>
       </div>
     </main>
     <footer class="mt-auto py-6 text-center text-base-content/60 text-sm">
       <p>Made with <span class="text-accent">♥</span> by <a href="https://github.com/ivy-js" class="text-primary hover:underline">Ivy</a> | <span class="font-bold text-accent">/pw Castle</span></p>
     </footer>
-    <script src="/scripts/script-zahsell.js" defer></script>
+    <script src="/scripts/script-index.js" defer></script>
   </body>
 </html>

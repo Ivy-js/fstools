@@ -8,6 +8,15 @@
     <link rel="icon" type="image/png" href="https://mc-heads.net/avatar/Feuforeves/64" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet" />
+    <style>
+      .font-minecraft {
+        font-family: 'Montserrat', monospace !important;
+        font-weight: 700 !important;
+        letter-spacing: -0.03em;
+      }
+    </style>
     <script>
       tailwind.config = {
         darkMode: 'class',
@@ -36,10 +45,11 @@
           <a href="/economy" class="btn btn-ghost btn-sm">Économie</a>
         </nav>
         <div class="flex items-center gap-2 flex-1 justify-end">
+          <a href="/discords" class="btn btn-info btn-sm flex items-center gap-1 mr-2"><i class="fab fa-discord text-lg"></i> Discord</a>
           <label class="swap swap-rotate">
             <input type="checkbox" id="themeToggle" />
-            <svg class="swap-on fill-current w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64 17.657A9 9 0 1 0 12 3v9z"/></svg>
-            <svg class="swap-off fill-current w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64 13.657A9 9 0 1 1 12 3v9z"/></svg>
+            <i class="fa-solid fa-moon swap-on fill-current w-7 h-7 text-xl"></i>
+            <i class="fa-solid fa-sun swap-off fill-current w-7 h-7 text-xl"></i>
           </label>
         </div>
       </div>
